@@ -29,5 +29,22 @@ app.put('/api/habitaciones', function (req, res) {
   res.send('estoy modificando una habitacion')
 })
 app.delete('/api/habitaciones', function (req, res) {
-  res.send('estoy eliminado una habitacion')
+  res.send('estoy eliminando una habitacion')
+})
+
+//programcion de reservas
+app.post('/api/reservas', function (req, res) {
+  res.send('estoy guardando una reserva')
+})
+app.get('/api/reservas', function (req, res) {
+  res.send('estoy buscando todas la reservas')
+})
+app.get('/api/reserva', function (req, res) {
+  res.send('estoy buscando una reserva')
+})
+app.put('/api/reservas', function (req, res) {
+  res.send('estoy modificando una reserva')
+})
+app.delete('/api/reservas', function (req, res) {
+  res.send('estoy eliminando una reserva')
 })
