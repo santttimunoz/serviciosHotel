@@ -1,11 +1,14 @@
 //este es necesario para enceder el servidor(forma distinta de importar)
 import express from "express";
-import { rutasAPI } from "./routes/rutasHotel";
+import { rutasAPI } from "./routes/rutasH.js"
+import { establecerConexionDB } from "./database/conexion.js";
+
 //esta clase representa un servidor
 export class Api {
   constructor() {
     this.app = express()
-    this.procesarPeticiones()
+    this.conectarBD()
+    this.procesarPeticiones()    
   }
   //1- levantar el servidor
   levantarServidor() {
@@ -14,8 +17,13 @@ export class Api {
     });
   }
   //2- antender y responder peticiones
-  procesarPeticiones() {        
+  procesarPeticiones() {  
+    this.app.use(express.json());      
     this.app.use("/", rutasAPI)
   }
   //3- conectarse a la base de datos
+  conectarBD(){    
+    establecerConexionDB()
+  }
+
 }
