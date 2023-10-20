@@ -1,8 +1,8 @@
-import mongoose from mongoose
+import mongoose from 'mongoose'
 
-const schema = mongoose.schema
+const Schema = mongoose.Schema
 
-const Habitacion = new schema({
+const Habitacion = new Schema({
     nombre:{
         type:String,
         required:true
@@ -21,4 +21,4 @@ const Habitacion = new schema({
     }
 })
 
-export const modeloHabitacion = mongoose.model('habitaciones', Habitacion)
+export const modelRoom = mongoose.model('habitaciones', Habitacion)

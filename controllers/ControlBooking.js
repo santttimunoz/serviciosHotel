@@ -1,7 +1,7 @@
 export class ControlReserva{
     constructor(){        
     }
-        BuscarReservas(request, response){
+        async BuscarReservas(request, response){
             try {
               response.status(200).json({
                 mensaje: "exito buscando los datos",
@@ -13,7 +13,7 @@ export class ControlReserva{
               });
             }
         }
-        BuscarReservaPorId(request, response){
+        async BuscarReservaPorId(request, response){
             try {
               let id = request.params.id;
               response.status(200).json({
@@ -26,7 +26,7 @@ export class ControlReserva{
               });
             }
         }
-        modificarReserva(request, response){
+        async modificarReserva(request, response){
             try {
               let id = request.params.id;
               let datos = request.body;
@@ -40,7 +40,7 @@ export class ControlReserva{
               });
             }
         }
-        eliminarReserva(request, response){
+        async eliminarReserva(request, response){
             try {
               let id = request.params.id;
               response.status(200).json({
@@ -53,7 +53,7 @@ export class ControlReserva{
               });
             }
         }
-        registrarReserva(request, response){
+        async registrarReserva(request, response){
              try {
                let datos = request.body;
                response.status(200).json({

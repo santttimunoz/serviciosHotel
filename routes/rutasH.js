@@ -7,10 +7,9 @@ let contoladorR = new ControlReserva()
 
 export let rutasAPI = express.Router()
 //aca poner los endpoint(nombres de los servicios)
-rutasAPI.post("/api/habitaciones", controladorH.registrarHabitacion);
-
-    rutasAPI.get("/api/habitaciones", controladorH.BuscarHabitaciones);
-    rutasAPI.get("/api/habitacion/:id", controladorH.BuscarHabitacionPorId);
+    rutasAPI.post("/api/habitaciones", controladorH.registrarHabitacion);
+    rutasAPI.get("/api/habitaciones", controladorH.buscarHabitaciones);
+    rutasAPI.get("/api/habitacion/:id", controladorH.buscarHabitacionPorId);
     rutasAPI.put("/api/habitaciones/:id", controladorH.modificarHabitacion);
     rutasAPI.delete("/api/habitaciones/:id", controladorH.eliminarHabitacion);
 
