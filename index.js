@@ -1,5 +1,6 @@
 import { Api } from "./Api.js";
-// import "dotenv/config";
+//que hace esta linea?
+import "dotenv/config";
 // console.log(process.env)
 //creacion de objeto de la clase api
 let server = new Api()

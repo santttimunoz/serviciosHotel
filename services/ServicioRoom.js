@@ -4,20 +4,23 @@ export class ServicioRoom{
     constructor(){
 
     }
-    async buscarHabitaciones(){
-        let habitaciones = new modelRoom.find()
+    async buscarRooms(){
+        let habitaciones =  modelRoom.find()
         return habitaciones
     }
-    async buscarHabitacionPorId(id){
-        let habitacion = new modelRoom.findById(id)
+    async buscarRoomPorId(id){
+        let habitacion =  modelRoom.findById(id)
         return habitacion        
     }
-    async modificarHabitacion(id, data){
+    async modificarRoom(id, data){
         return await modelRoom.findByIdAndUpdate(id, data)
     }
-    async eliminarHabitacion(id){}
-    async registrarHabitacion(data){
-        let habitacionNueva = new modelRoom(data)
-        return await habitacionNueva.save
+    async eliminarRoom(id){
+        await modelRoom.findByIdAndDelete(id)
+    }
+    async registrarRoom(data){
+        let habitacionNueva = new modelRoom(data)  
+        await habitacionNueva.save()
+        return habitacionNueva      
     }
 }

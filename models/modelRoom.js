@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const Habitacion = new Schema({
+const habitacion = new Schema({
     nombre:{
         type:String,
         required:true
@@ -18,7 +18,18 @@ const Habitacion = new Schema({
     precioNoche:{
         type: Number,
         required:true
+    },
+    fechaInicio:
+    {
+        type: Date,
+        required:true
+    },
+    fechaFin:
+    {
+        type: Date,
+        required:true
     }
+    
 })
 
-export const modelRoom = mongoose.model('habitaciones', Habitacion)
+export const modelRoom = mongoose.model('habitaciones', habitacion)

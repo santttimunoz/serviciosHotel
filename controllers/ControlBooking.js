@@ -1,11 +1,13 @@
+import { ServicioBooking } from "../services/ServicioBooking.js";
 export class ControlReserva{
     constructor(){        
     }
         async BuscarReservas(request, response){
             try {
+              let servicioBooking = new ServicioBooking()              
               response.status(200).json({
                 mensaje: "exito buscando los datos",
-                datos: "aca los datos",
+                datos: await servicioBooking.BuscarReservas(),
               });
             } catch (error) {
               response.status(400).json({
@@ -15,10 +17,13 @@ export class ControlReserva{
         }
         async BuscarReservaPorId(request, response){
             try {
-              let id = request.params.id;
+              let servicioBooking = new ServicioBooking()
+              let id = request.params.id  
+              let data = request.body
+              await servicioBooking.BuscarReservas(id)                       
               response.status(200).json({
-                mensaje: "exito buscando los datos",
-                datos: "aca los datos",
+                mensaje: "exito buscando la reserva",
+                datos: data ,
               });
             } catch (error) {
               response.status(400).json({
@@ -28,11 +33,13 @@ export class ControlReserva{
         }
         async modificarReserva(request, response){
             try {
+              let servicioBooking = new ServicioBooking()
               let id = request.params.id;
-              let datos = request.body;
+              let data = request.body;              
+              await servicioBooking.modificarReservas(id, data)
               response.status(200).json({
-                mensaje: "exito buscando los datos",
-                datos: "aca los datos",
+                mensaje: "exito modificando los datos",
+                datos: data,
               });
             } catch (error) {
               response.status(400).json({
@@ -42,10 +49,12 @@ export class ControlReserva{
         }
         async eliminarReserva(request, response){
             try {
+              let servicioBooking = new ServicioBooking()
               let id = request.params.id;
+              await servicioBooking.eliminarReservas(id)
               response.status(200).json({
-                mensaje: "exito buscando los datos",
-                datos: "aca los datos",
+                mensaje: "exito eliminado los datos",
+                datos: "ID de la reserva eliminada: " + id,
               });
             } catch (error) {
               response.status(400).json({
@@ -56,9 +65,11 @@ export class ControlReserva{
         async registrarReserva(request, response){
              try {
                let datos = request.body;
+               let servicioBooking = new ServicioBooking()
+               await servicioBooking.registrarReserva(datos)
                response.status(200).json({
-                 mensaje: "exito buscando los datos",
-                 datos: "aca los datos",
+                 mensaje: "exito guardando los datos",
+                 datos: datos,
                });
              } catch (error) {
                response.status(400).json({
