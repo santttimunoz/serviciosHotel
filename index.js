@@ -7,5 +7,4 @@ let server = new Api()
 
 //el servidor es un intermediario(recibe y delega las peticiones)
 server.levantarServidor()
-
 server.procesarPeticiones()
