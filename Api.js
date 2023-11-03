@@ -1,5 +1,6 @@
 //este es necesario para enceder el servidor(forma distinta de importar)
-import express from "express";
+import express from "express"
+import cors from "cors"
 import { rutasAPI } from "./routes/rutasH.js"
 import { establecerConexionDB } from "./database/conexion.js";
 
@@ -18,6 +19,7 @@ export class Api {
   }
   //2- antender y responder peticiones
   procesarPeticiones() {  
+    this.app.use(cors())
     this.app.use(express.json());      
     this.app.use("/", rutasAPI)
   }
