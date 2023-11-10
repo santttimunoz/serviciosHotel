@@ -12,13 +12,15 @@ export class Api {
   }
   //1- levantar el servidor
   levantarServidor() {
-    this.app.listen(3000, function () {
+    this.app.listen(4000, function () {
       console.log("servirdor encendido");
     });
   }
   //2- antender y responder peticiones
   procesarPeticiones() {  
-    this.app.use(express.json());      
+    //esta linea define un middleware que convierte los datos a JSON para que la app los pueda manejar
+    this.app.use(express.json());   
+    //esta linea define un middleware que asocia las rutas definidas en rutasAPI con la raiz de mi aplicacion   
     this.app.use("/", rutasAPI)
   }
   //3- conectarse a la base de datos
