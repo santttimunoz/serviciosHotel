@@ -5,7 +5,6 @@ import "dotenv/config";
 //creacion de objeto de la clase api
 let server = new Api()
 
-//el servidor es un intermediario(recibe y delega las peticiones)
+//el servidor es un intermediario(recibe y delegaaa las peticiones)
 server.levantarServidor()
-
 server.procesarPeticiones()

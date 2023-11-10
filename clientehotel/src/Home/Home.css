@@ -1,0 +1,17 @@
+.banner{
+    background-image: url(../../public/vite.svg);
+    padding: 15%;   
+    position: relative;
+    z-index: 1;
+}
+
+banner::after{
+    content: '';
+    background-color: black;
+    opacity: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}

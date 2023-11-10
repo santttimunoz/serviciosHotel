@@ -69,7 +69,7 @@ export class ControlHabitacion{
                let fechaInicio = new Date(data.fechaInicio)
                let fechaFin = new Date(data.fechaFin)
                //entregar la diferencia en dias de esas dos fechas               
-               let diference = fechaFin - fechaInicio
+               let diference = (Math.floor(fechaFin - fechaInicio) / (1000 * 60 * 60 * 24))
                await servicioRoom.registrarRoom(data)
                response.status(200).json({
                  mensaje: "exito registrando los datos",
