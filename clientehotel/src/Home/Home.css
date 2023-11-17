@@ -1,6 +1,6 @@
 .banner{
-    background-image: url(../../public/vite.svg);
-    padding: 15%;   
+    background-image: url(../../public/hotelimg.jpg);
+    padding: 8%;   
     position: relative;
     z-index: 1;
 }
@@ -15,3 +15,18 @@ banner::after{
     height: 100%;
     z-index: -1;
 }
+.swiper{
+    width: 600px;
+    height: 300px;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    height: auto;
+  }
+  .swiper-slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
