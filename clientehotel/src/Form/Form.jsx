@@ -13,31 +13,32 @@ export function Form() {
         return event => set(event.target.value)
     }
 
-  
-     async function Post(){
+     async function Post(event){
+        event.preventDefault();
         try {
-            let url="https://servicios-hotel.vercel.app/"
+            let url="https://servicios-hotel.vercel.app/api/habitaciones"
         let peticion={
             method:"POST",
             headers:{
                 "Content-Type": "application/json"
             }, 
             body: JSON.stringify({
-                name,
-                number,
-                foto,
-                precioNoche,
-                dateIn,
-                dateOut,
-                descripcion
+                name :name,
+                number: number,
+                foto: foto,
+                precioNoche: precioNoche,
+                dateIn: dateIn,
+                dateOut: dateOut,
+                descripcion: descripcion
             })    
         }        
-        let respuesta =  fetch(url, peticion)       
+        let respuesta =  await fetch(url, peticion)       
+        console.log("Respuesta recibida:", respuesta);
         if (!respuesta.ok) {
             throw new Error(`Error al enviar la solicitud: ${respuesta.status}`);
           }
           let data =  await respuesta.json()
-          console.log(data)        
+          console.log("Datos recibidos:", data);   
 
         } catch (error) {
             throw new Error("problema enviando: "+error.message)
