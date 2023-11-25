@@ -8,18 +8,3 @@ let server = new Api()
 //el servidor es un intermediario(recibe y delegaaa las peticiones)
 server.levantarServidor()
 server.procesarPeticiones()
-
-// {
-    
-//     "version":2,
-//     "builds":[{
-//         "src":"./index.js",
-//         "use":"@vercel/node"
-//     }],
-//     "routes":[
-//         {
-//             "src":"/(.*)",
-//             "dest":"/"
-//         }
-//     ]   
-// }

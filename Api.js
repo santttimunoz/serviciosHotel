@@ -1,5 +1,4 @@
 //este es necesario para enceder el servidor(forma distinta de importar)
-
 import express from "express"
 import cors from "cors"
 import { rutasAPI } from "./routes/rutasH.js"
