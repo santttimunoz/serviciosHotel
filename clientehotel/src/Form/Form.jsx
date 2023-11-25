@@ -23,13 +23,13 @@ export function Form() {
                 "Content-Type": "application/json"
             }, 
             body: JSON.stringify({
-                name :name,
-                number: number,
+                nombre :name,                
                 foto: foto,
+                description: descripcion,
                 precioNoche: precioNoche,
-                dateIn: dateIn,
-                dateOut: dateOut,
-                descripcion: descripcion
+                fechaInico: dateIn,
+                fechaFin: dateOut
+                
             })    
         }        
         let respuesta =  await fetch(url, peticion)       

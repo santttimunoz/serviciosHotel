@@ -7,7 +7,7 @@ let contoladorR = new ControlReserva()
 
 export let rutasAPI = express.Router()
 //aca poner los endpoint(nombres de los servicios)
-    rutasAPI.post("/api/habitaciones1", controladorH.registrarRoom);
+    rutasAPI.post("/api/habitaciones", controladorH.registrarRoom);
     // rutasAPI.get("/api/habitaciones", controladorH.buscarRooms);
     rutasAPI.get("/api/habitacion/:id", controladorH.buscarRoomPorId);
     rutasAPI.put("/api/habitaciones/:id", controladorH.modificarRoom);
@@ -19,3 +19,5 @@ export let rutasAPI = express.Router()
     rutasAPI.get("/api/reserva/:id", contoladorR.BuscarReservaPorId);
     rutasAPI.put("/api/reservas/:id", contoladorR.modificarReserva);
     rutasAPI.delete("/api/reservas/:id", contoladorR.eliminarReserva);
+
+    console.log(rutasAPI)
